@@ -47,19 +47,14 @@ input[type="button"]:hover {
     margin: 0 auto;
 
     -webkit-align-self: center;
-
     -ms-flex-item-align: center;
 
     align-self: center;
 
     display: -webkit-box;
-
     display: -webkit-flex;
-
     display: -moz-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -97,13 +92,9 @@ input[type="button"]:hover {
     transition: .5s ease;
 
     display: -webkit-box;
-
     display: -webkit-flex;
-
     display: -moz-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -132,15 +123,11 @@ input[type="button"]:hover {
     max-width: 720px;
     height: 50%;
     margin: 1rem;
-
     font-size: 1rem;
 
     display: -webkit-box;
-
     display: -webkit-flex;
-
     display: -moz-box;
-
     display: -ms-flexbox;
 
     display: flex;
@@ -246,11 +233,8 @@ header > img {
     color: var(--mywhite);
 
     -webkit-transition: .4s;
-
     -o-transition: .4s;
-
     -moz-transition: .4s;
-
     transition: .4s;
     text-transform: uppercase;
     font-weight: 1000;
@@ -269,13 +253,9 @@ header > img {
     background-color: var(--mywhite);
 
     display: -webkit-box;
-
     display: -webkit-flex;
-
     display: -moz-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -362,13 +342,9 @@ footer {
     color: var(--mywhite);
 
     display: -webkit-box;
-
     display: -webkit-flex;
-
     display: -moz-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -389,9 +365,7 @@ footer {
     padding: .5rem;
 
     -webkit-align-self: baseline;
-
     -ms-flex-item-align: baseline;
-
     align-self: baseline;
 
     position: fixed;
