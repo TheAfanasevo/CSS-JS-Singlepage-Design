@@ -1,0 +1,368 @@
+/* Variables */
+:root {
+    --mylightb: #007bc1;
+    --mydarkb: #012e47;
+    --mylightor: #ff8000;
+    --mydarkor: #cc6600;
+    --mywhite: #e5e5e5;
+}
+
+/* Basic layout */
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html > *, *:before, *:after {
+    box-sizing: inherit;
+    margin: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+}
+
+.page-container {
+    max-width: 1366px;
+    margin: 0 auto;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Notification panel */
+
+.notification {
+    width: 100%;
+    min-height: 100px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+    overflow: hidden;
+    transition: .5s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--mywhite);
+}
+
+.slide-out {
+    transform: translateY(-100px);
+    margin: -50px;
+}
+
+.notification > .panel-content {
+    max-width: 720px;
+    height: 50%;
+    margin: 1rem;
+
+    font-size: 1rem;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.panel-content > p {
+    line-height: 1.5rem;
+    margin: 0 auto;
+}
+
+.panel-content > input[type="button"] {
+    border: 2px solid var(--mylightb);
+    border-radius: 5px;
+    background-color: var(--mylightb);
+    padding: 0rem 1rem;
+
+    color: var(--mywhite);
+    font-weight: 500;
+}
+
+/* Header & Hero*/
+header {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+header > img {
+    max-width: 3rem;
+    padding: 1rem;
+    float: left;
+}
+
+.hero {
+    width: 100%;
+    height: 700px;
+    background-image: url('./assets/work-desk__dustin-lee.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--mydarkb);
+    background-blend-mode: overlay;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    height: calc(100% - 100px);
+    color: var(--mywhite);
+    line-height: 2rem;
+}
+
+.hero-content > h1, h3 {
+    font-weight: 100;
+}
+
+.hero-content > input[type="button"] {
+    border: 2px solid var(--mywhite);
+    border-radius: 5px;
+    background: none;
+    padding: 1rem;
+
+    color: var(--mywhite);
+
+    transition: .4s;
+    text-transform: uppercase;
+    font-weight: 1000;
+}
+
+.hero-content > input[type="button"]:hover {
+    color: var(--mydarkb);
+    background-color: var(--mywhite);
+}
+
+/* Highlights */
+
+.highlights {
+    height: 100%;
+    padding: 0px 50px;
+    background-color: var(--mywhite);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-header {
+    max-width: 50%;
+    margin: 1rem;
+}
+
+.highlight-header > * {
+    text-align: center;
+    font-weight: 100;
+    color: rgba(0, 0, 0, .7); 
+}
+
+.highlight-header > h2 {
+    font-size: 1rem;
+}
+
+.grid-container {
+    width: 100%;
+    height: 100%;
+    margin: 2rem;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.grid-container > .box {
+    box-shadow: inset 0 0 1px .5px rgba(0, 0, 0, .5);
+    padding: 1rem;
+    color: rgba(0, 0, 0, .7);
+}
+
+.first-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first-line > i {
+    color: rgba(0, 0, 0, .3);
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: var(--mydarkb);
+    color: var(--mywhite);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subscribe panel */
+
+.subscribe-panel {
+    max-width: 640px;
+    padding: .5rem;
+
+    align-self: baseline;
+
+    position: fixed;
+    bottom: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: .5s ease-in-out;
+    color: var(--mywhite);
+    background: var(--mylightb);
+}
+
+.news-subscription > h1 {
+    font-size: 1.5rem;
+}
+
+.pop-in {
+    visibility: visible;
+    opacity: .9;
+    transition: 0s 1s, 1s linear;
+}
+
+.pop-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0s 1s, 1s linear;
+}
+
+.news-subscription {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.news-subscription > .close-subs {
+    align-self: flex-end;
+    color: var(--mywhite);
+}
+
+.news-subscription > .input-bar {
+    width: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-bar > input[type="email"] {
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.input-bar > input[type="button"] {
+    border: 2px solid var(--mylightor);
+    border-radius: 5px;
+    background-color: var(--mylightor);
+    margin: 1rem;
+    padding: 5px;
+
+    color: var(--mywhite);
+    font-weight: 500;
+}
+
+.input-bar > input[type="button"]:hover {
+    background-color: var(--mydarkor);
+    border: 2px solid var(--mydarkor);
+}
+
+
+/* 1st breakpoint */
+ 
+@media all and (max-width: 360px) { 
+    /* Notification panel */
+    .panel-content {
+        flex-direction: column;
+    }
+
+    .panel-content > input[type="button"] {
+        align-self: baseline;
+        margin: 1rem 0px;
+        padding: .5rem;
+    }
+
+    /* Highlights */
+    .highlight-header {
+        max-width: 100%;
+    }
+
+    /* Subs panel */
+    .input-bar  {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-bar > * {
+        width: 100%;
+    }
+}
+
+/* 2nd breakpoint */
+
+@media all and (max-width: 480px) {
+    .panel-content {
+        flex-direction: column;
+    }
+
+    .panel-content > input[type="button"] {
+        align-self: baseline;
+        margin: 1rem 0px;
+        padding: .5rem;
+    }
+
+    .slide-out {
+        transform: translateY(-100%);
+        margin: -100px;
+    }
+    
+    .highlight-header {
+        max-width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+ 
+}
+
+/* 3rd breakpoint */
+@media all and (min-width: 480px) and (max-width: 960px) {
+
+    .highlight-header {
+        max-width: 100%;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

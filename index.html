@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mustafa Kursun | Cermati.com Front-end Developer Entry Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./build/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="notification">
+      <span class="panel-content">
+        <p class="note">By accessing and using this website, you acknowledge that you have read and
+          understand our <a href="#">Cookie Policy</a>, <a href="#">Privacy Policy</a>, and our <a href="#">Terms of
+            Service</a>.</p>
+        <input class="close-notification" type="button" value="Got it!">
+      </span>
+    </div>
+    <div class="hero">
+      <header>
+        <img src="./assets/y-logo-white.png" alt="logo">
+      </header>
+      <div class="hero-content">
+        <h1>Hello! I'm Mustafa!</h1>
+        <h2>Consult, Design, and Develop Websites</h2>
+        <h3>Have something great in mind? Feel free to contact me.<br>
+          I'll help you to make it happen.</h3>
+        <input class="close-notification button" type="button" value="Let's Make Contact">
+      </div>
+    </div>
+    <div class="highlights">
+      <div class="highlight-header">
+        <h1>How Can I Help You?</h1>
+        <h2>Our work then targeted, best practices outcomes social innovation synergy.
+          Venture philanthropy, revolutionary inclusive policymaker relief. User-centered
+          program areas scale.</h2>
+      </div>
+      <div class="grid-container">
+        <div class="box">
+          <span class="first-line">
+            <h1>Consult</h1><i class="fas fa-comments fa-3x"></i>
+          </span>
+          <p>Co-create, design thinking; strengthen infrastructure resist granular.
+            Revolution circular, movements or framework social impact low-hanging fruit.
+            Save the world compelling revolutionary progress.</p>
+        </div>
+        <div class="box">
+          <span class="first-line">
+            <h1>Design</h1><i class="fas fa-paint-brush fa-3x"></i>
+          </span>
+          <p>Policymaker collaborates collective impact humanitarian shared value
+            vocabulary inspire issue outcomes agile. Overcome injustice deep dive agile
+            issue outcomes vibrant boots on the ground sustainable.</p>
+        </div>
+        <div class="box">
+          <span class="first-line">
+            <h1>Develop</h1><i class="fas fa-cubes fa-3x"></i>
+          </span>
+          <p>Revolutionary circular, movements a or impact framework social impact low-
+            hanging. Save the compelling revolutionary inspire progress. Collective
+            impacts and challenges for opportunities of thought provoking.</p>
+        </div>
+        <div class="box">
+          <span class="first-line">
+            <h1>Marketing</h1><i class="fas fa-bullhorn fa-3x"></i>
+          </span>
+          <p>Peaceful; vibrant paradigm, collaborative cities. Shared vocabulary agile,
+            replicable, effective altruism youth. Mobilize commitment to overcome
+            injustice resilient, uplift social transparent effective.</p>
+        </div>
+        <div class="box">
+          <span class="first-line">
+            <h1>Manage</h1><i class="fas fa-tasks fa-3x"></i>
+          </span>
+          <p>Change-makers innovation or shared unit of analysis. Overcome injustice
+            outcomes strategize vibrant boots on the ground sustainable. Optimism,
+            effective altruism invest optimism corporate social.</p>
+        </div>
+        <div class="box">
+          <span class="first-line">
+            <h1>Evolve</h1><i class="fas fa-chart-line fa-3x"></i>
+          </span>
+          <p>Activate catalyze and impact contextualize humanitarian. Unit of analysis
+            overcome injustice storytelling altruism. Thought leadership mass
+            incarceration. Outcomes big data, fairness, social game-changer.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="foot-container">
+      <p>&copy; 2019 Mustafa Kursun. All rights reserved.</p>
+    </footer id="footer">
+    <div class="subscribe-panel">
+      <form action="POST" class="news-subscription">
+        <a class="close-subs">&times;</a>
+        <h1>Get latest updates in web technologies</h1>
+        <p>I write articles related to web technologies, such as design trends, development tools, UI/UX case studies
+          and reviews, and more. Sign up to my newsletter to get them all.</p>
+        <div class="input-bar">
+          <input type="email" placeholder="Email address">
+          <input class="sendSubs" type="button" value="Count me in!">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+  /* Close top notification */
+  const closeNote = document.querySelector('.close-notification');
+  const notificationBar = document.querySelector('.notification');
+
+  function topSlide(e) {
+    notificationBar.classList.toggle('slide-out');
+  };
+
+  closeNote.addEventListener('click', topSlide);
+
+/* Close subscription box */
+const closeSubs = document.querySelector('.close-subs');
+const subscribePanel = document.querySelector('.subscribe-panel');
+let timer = localStorage.getItem('timer'); /* Empty */
+let closed = localStorage.getItem('closed'); /* Empty */
+console.log(`timer : ${timer}\nclosed : ${closed}`);
+
+function bottomSlide(e) {
+  subscribePanel.classList.toggle('pop-out');
+  if (!timer) {
+    localStorage.setItem('timer', new Date().getTime());
+    localStorage.setItem('closed', true);
+    console.log('timer started at:', localStorage.getItem('timer'));
+    console.log('closed', closed);
+  } else {
+    localStorage.setItem('timer', new Date().getTime());
+    console.log('already closed before');
+  }
+};
+
+closeSubs.addEventListener('click', bottomSlide);
+
+/* Open subscription box when scrolled down to 2/3 */
+function scrollPercentage() {
+  let height = document.documentElement,
+    body = document.body,
+    scrollTop = 'scrollTop',
+    scrollHeight = 'scrollHeight';
+  return (height[scrollTop] || body[scrollTop]) /
+    ((height[scrollHeight] || body[scrollHeight]) - height.clientHeight) * 100;
+};
+
+window.addEventListener('scroll', function(e) {
+  let percentage = scrollPercentage();
+  if (percentage >= 66.666) {
+    var tenmin = 60000 * 10; // this is 5 seconds here to try
+    console.log((new Date().getTime() - timer));
+  }
+
+  if (!timer || (new Date().getTime() - timer) > tenmin) {
+    console.log("ten min passed");
+    subscribePanel.classList.add('pop-in');
+  }
+});
+</script>
+
+</body>
+
+</html>
