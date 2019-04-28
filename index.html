@@ -152,14 +152,12 @@ function scrollPercentage() {
 
 window.addEventListener('scroll', function(e) {
   let percentage = scrollPercentage();
-  if (percentage >= 66.666) {
-    var tenmin = 60000 * 10; // ten minutes
-    console.log((new Date().getTime() - timer));
-  }
-
-  if (!timer || (new Date().getTime() - timer) > tenmin) {
-    console.log("ten min passed");
-    subscribePanel.classList.add('pop-in');
+  var tenmin = 60000 * 10; // ten minutes
+  if(percentage >= 66.666) {
+    if (!timer || (new Date().getTime() - timer) > tenmin) {
+      console.log("ten min passed");
+      subscribePanel.classList.add('pop-in');
+    }
   }
 });
 </script>
